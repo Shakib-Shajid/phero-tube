@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <!-- daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <section class="max-w-7xl mx-auto mt-5">
+        <div class="max-w-4xl mx-auto">
+            <div class="collapse collapse-arrow bg-base-200 p-4 mb-3">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">
+                    Discuss the scope of var, let, and const
+
+                </div>
+                <div class="collapse-content">
+
+                    <h2 class="text-2xl font-medium">var:</h2>
+                    <ul class="list-disc">
+                        <li> <strong>Function Scope:</strong> When a variable is declared with the var keyword, it is
+                            function-scoped, which
+                            implies that the whole function in which it is defined may see it.
+
+                        </li>
+                        <li><strong>Hoisting:</strong> Variables defined using the var keyword are elevated to the top
+                            of
+                            the global scope or
+                            the
+                            function that contains them. This implies that even if a var variable is started with
+                            undefined,
+                            you
+                            can use it before it is declared in the code.</li>
+                    </ul>
+
+                    <br>
+
+                    <h2 class="text-2xl font-medium">let:</h2>
+                    <ul class="list-disc">
+                        <li>Block Scope: Let-declared variables have block scope, which means their visibility is
+                            constrained to
+                            the block in which they are defined.
+                            (usually enclosed by curly braces {}).</li>
+
+                        <li>Hoisting: Let-declared variables are positioned at the top of the contained block, unlike
+                            var-declared variables, which are initialized. When trying to access a let variable before
+                            it
+                            has
+                            been declared, you will encounter the "temporal dead zone," which is also known as a
+                            ReferenceError.</li>
+
+                        <li>Reassignment: Let-declared variables can be changed in assignment within their scope, but
+                            they
+                            cannot be changed in definition within the same scope.</li>
+
+                    </ul>
+                    <br>
+
+                    <h2 class="text-2xl font-medium">const:</h2>
+
+                    <ul class="list-disc">
+                        <li><strong>Block Scope:</strong> Const-declared variables have the same block scope as
+                            let-declared
+                            variables.
+                            Const variables are hoisted to the top of the block that contains them, but unlike let, they
+                            are
+                            not
+                            initialized and are thus also in the temporal dead zone.</li>
+
+                        <li><strong>Immutable:</strong> Constant variables cannot be reassigned after initialization and
+                            are
+                            constant when
+                            specified with the const keyword. It is still possible to change the attributes or elements
+                            of
+                            objects and arrays that have been defined with const.</li>
+                    </ul>
+
+                    <br>
+
+                </div>
+            </div>
+            <div class="collapse collapse-arrow bg-base-200 p-4 mb-3">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">
+                    Tell us the use cases of null and undefined
+
+                </div>
+                <div class="collapse-content">
+
+                    <h2 class="text-2xl font-medium">null</h2>
+
+                    Explicitly Absent Value: null is often used to represent the intentional absence of any object value
+                    or the absence of a value that should be present.
+                    <ul class="list-disc">
+
+                        <li><strong>Initialization: </strong>It can be assigned to variables, properties, or parameters
+                            when
+                            you want to
+                            initialize them with an empty or unknown value that is intentionally set to "nothing."</li>
+
+                        <li><strong>Comparison:</strong> You can use null to compare against a variable or property to
+                            check
+                            if it has been
+                            explicitly set to "nothing."</li>
+
+                        <li><strong>Clearing Values:</strong> It's sometimes used to clear the value of a variable or
+                            property by assigning
+                            null
+                            to it.</li>
+                    </ul>
+                    <br>
+
+                    <h2 class="text-2xl font-medium">undefined</h2>
+
+                    Implicit Absent Value: undefined represents a variable or property that has been declared but
+                    has
+                    not been assigned any value. It's typically used when a value is expected but hasn't been
+                    provided.
+                    <ul class="list-disc">
+
+                        <li><strong>Function Return: </strong>Functions that do not explicitly return a value return
+                            undefined by default.
+                            Missing Properties: When accessing an object property that doesn't exist, JavaScript returns
+                            undefined.</li>
+
+                        <li><strong>Function Arguments:</strong> If a function is called with fewer arguments than
+                            expected,
+                            the missing
+                            arguments are assigned undefined.</li>
+                    </ul>
+
+                    <br>
+                </div>
+            </div>
+            <div class="collapse collapse-arrow bg-base-200 p-4 mb-3">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">
+                    What do you mean by REST API?
+                </div>
+                <div class="collapse-content ">
+                    <p>Representational State Transfer Application Programming Interface, or REST API, is a set of
+                        architectural guidelines and restrictions for creating and utilizing web services. It's a
+                        well-liked
+                        technique for creating scalable, stateless, and simple-to-maintain web services and APIs. REST
+                        is an
+                        approach to creating networked apps rather than a particular technology.
+                    </p>
+                    <p>Key principles and characteristics of RESTful APIs include:
+
+                        <li><strong>Statelessness:</strong> Each request from a client to a server must contain all the
+                            information needed to
+                            understand and process the request. The server should not store any client state between
+                            requests.
+                            This allows for scalability and simplifies server implementation.</li>
+
+                        <li><strong>Client-Server Architecture:</strong> REST separates the client (the user interface
+                            or
+                            application) from
+                            the
+                            server (the data storage and processing), allowing them to evolve independently. This
+                            separation
+                            promotes modularity and scalability.</li>
+
+                        <li><strong>Uniform Interface:</strong> REST APIs have a consistent and uniform set of resources
+                            and
+                            methods for
+                            accessing and manipulating those resources. These methods are often referred to as HTTP
+                            methods,
+                            such as GET (retrieve data), POST (create new data), PUT (update existing data), DELETE
+                            (remove
+                            data), etc.</li>
+
+                        <li><strong>Resource-Based:</strong> Resources are the central concept in REST. Everything in a
+                            RESTful system is
+                            considered a resource, and each resource is identified by a unique URI (Uniform Resource
+                            Identifier). These URIs serve as the endpoints for interacting with the resources.</li>
+
+                        <li><strong>Representation:</strong> Resources can have multiple representations (e.g., JSON,
+                            XML,
+                            HTML), and clients
+                            can
+                            specify the desired representation in their requests using the Accept header. The server
+                            responds
+                            with the requested representation in the response.</li>
+
+                        <li><strong>Stateless Communication:</strong> Each request from the client to the server should
+                            contain all necessary
+                            information. Servers do not store client context or session information between requests.
+                            This
+                            simplifies server implementation and allows for better scalability.</li>
+
+                        <li><strong>Layered System:</strong> REST allows for the use of intermediary components
+                            (proxies,
+                            load balancers,
+                            caches)
+                            to improve system performance, scalability, and security. Clients are unaware of the
+                            presence of
+                            intermediaries.</li>
+
+                        <li><strong>Stateless Communication:</strong> Each request from the client to the server should
+                            contain all necessary
+                            information. Servers do not store client context or session information between requests.
+                            This
+                            simplifies server implementation and allows for better scalability.</li>
+
+                        <li><strong>Stateless Communication:</strong> Each request from the client to the server should
+                            contain all necessary
+                            information. Servers do not store client context or session information between requests.
+                            This
+                            simplifies server implementation and allows for better scalability.</li>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <section>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">
+                Discuss the scope of var, let, and const
+
+            </div>
+            <div class="collapse-content">
+                <p>
+                    <strong>var:</strong>
+                    Function Scope: When a variable is declared with the var keyword, it is function-scoped, which
+                    implies that the whole function in which it is defined may see it.
+
+                    Hoisting: Variables defined using the var keyword are elevated to the top of the global scope or the
+                    function that contains them. This implies that even if a var variable is started with undefined, you
+                    can use it before it is declared in the code.
+
+                </p>
+                <p>
+                    <strong>let:</strong>
+                    Block Scope: Let-declared variables have block scope, which means their visibility is constrained to
+                    the block in which they are defined.
+                    (usually enclosed by curly braces {}).
+
+                    Hoisting: Let-declared variables are positioned at the top of the contained block, unlike
+                    var-declared variables, which are initialized. When trying to access a let variable before it has
+                    been declared, you will encounter the "temporal dead zone," which is also known as a ReferenceError.
+
+
+                    Reassignment: Let-declared variables can be changed in assignment within their scope, but they
+                    cannot be changed in definition within the same scope.
+
+                </p>
+                <p>
+                    <strong>const:</strong>
+                    Block Scope: Const-declared variables have the same block scope as let-declared variables.
+                    Const variables are hoisted to the top of the block that contains them, but unlike let, they are not
+                    initialized and are thus also in the temporal dead zone.
+
+
+                    Immutable: Constant variables cannot be reassigned after initialization and are constant when
+                    specified with the const keyword. It is still possible to change the attributes or elements of
+                    objects and arrays that have been defined with const.
+
+                </p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">
+                Tell us the use cases of null and undefined
+
+            </div>
+            <div class="collapse-content">
+                <p>null:
+
+                    Explicitly Absent Value: null is often used to represent the intentional absence of any object value
+                    or the absence of a value that should be present.
+
+                    Initialization: It can be assigned to variables, properties, or parameters when you want to
+                    initialize them with an empty or unknown value that is intentionally set to "nothing."
+
+                    Comparison: You can use null to compare against a variable or property to check if it has been
+                    explicitly set to "nothing."
+
+                    Clearing Values: It's sometimes used to clear the value of a variable or property by assigning null
+                    to it.</p>
+                <p>undefined:
+
+                    Implicit Absent Value: undefined represents a variable or property that has been declared but has
+                    not been assigned any value. It's typically used when a value is expected but hasn't been provided.
+
+                    Function Return: Functions that do not explicitly return a value return undefined by default.
+                    Missing Properties: When accessing an object property that doesn't exist, JavaScript returns
+                    undefined.
+
+                    Function Arguments: If a function is called with fewer arguments than expected, the missing
+                    arguments are assigned undefined.</p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">
+                What do you mean by REST API?
+            </div>
+            <div class="collapse-content">
+                <p>Representational State Transfer Application Programming Interface, or REST API, is a set of
+                    architectural guidelines and restrictions for creating and utilizing web services. It's a well-liked
+                    technique for creating scalable, stateless, and simple-to-maintain web services and APIs. REST is an
+                    approach to creating networked apps rather than a particular technology.
+                </p>
+                <p>Key principles and characteristics of RESTful APIs include:
+
+                    Statelessness: Each request from a client to a server must contain all the information needed to
+                    understand and process the request. The server should not store any client state between requests.
+                    This allows for scalability and simplifies server implementation.
+
+                    Client-Server Architecture: REST separates the client (the user interface or application) from the
+                    server (the data storage and processing), allowing them to evolve independently. This separation
+                    promotes modularity and scalability.
+
+                    Uniform Interface: REST APIs have a consistent and uniform set of resources and methods for
+                    accessing and manipulating those resources. These methods are often referred to as HTTP methods,
+                    such as GET (retrieve data), POST (create new data), PUT (update existing data), DELETE (remove
+                    data), etc.
+
+                    Resource-Based: Resources are the central concept in REST. Everything in a RESTful system is
+                    considered a resource, and each resource is identified by a unique URI (Uniform Resource
+                    Identifier). These URIs serve as the endpoints for interacting with the resources.
+
+                    Representation: Resources can have multiple representations (e.g., JSON, XML, HTML), and clients can
+                    specify the desired representation in their requests using the Accept header. The server responds
+                    with the requested representation in the response.
+
+                    Stateless Communication: Each request from the client to the server should contain all necessary
+                    information. Servers do not store client context or session information between requests. This
+                    simplifies server implementation and allows for better scalability.
+
+                    Layered System: REST allows for the use of intermediary components (proxies, load balancers, caches)
+                    to improve system performance, scalability, and security. Clients are unaware of the presence of
+                    intermediaries.
+
+                    Stateless Communication: Each request from the client to the server should contain all necessary
+                    information. Servers do not store client context or session information between requests. This
+                    simplifies server implementation and allows for better scalability.
+
+                    Stateless Communication: Each request from the client to the server should contain all necessary
+                    information. Servers do not store client context or session information between requests. This
+                    simplifies server implementation and allows for better scalability.</p>
+            </div>
+        </div>
+    </section> -->
+</body>
+
+</html>
