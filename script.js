@@ -26,8 +26,6 @@ const handleCard = async (categoryId) => {
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
 
-  // .............................................
-
   if (data.data.length === 0) {
     console.log("no found");
 
@@ -61,15 +59,45 @@ const handleCard = async (categoryId) => {
   }
   // .............................................
 
+  // ------cauculate time--------------
+  // console.log(cards.others.posted_date);
+
   data.data.forEach((category) => {
+    // .............................................
+
+    let second = category.others.posted_date;
+
+    console.log(second);
+    let minutes = 0;
+    let hours = 0;
+
+    hours = parseInt(second / 3600);
+    console.log(hours);
+
+    second = parseInt(second % 3600);
+    minutes = parseInt(second / 60);
+    console.log(minutes);
+
+    second = parseInt(second % 60);
+    console.log(second);
+
+    // ........................................
     const div = document.createElement("div");
 
-    // .....................................
     div.innerHTML = `
     <div class="card card-compact w-72 bg-base-100 shadow-xl">
-        <figure><img src=${
-          category?.thumbnail
-        } alt="Shoes" class="rounded-lg w-80 h-52" /></figure>
+        <figure><img src=${category?.thumbnail} alt='${
+      category?.title
+    }' class="rounded-lg w-80 h-52" />
+          <div class="absolute">
+            ${
+              category.others.posted_date > 0
+                ? `<p class="relative left-16 top-20 bg-black text-white px-1 py-1 rounded-md text-xs w-32 text-center">${hours}hrs ${minutes}min ago</p>`
+                : ``
+            } 
+
+          </div>
+        </figure>
         <div class="card-body">
           <div class="flex gap-3">
             <div>
@@ -87,15 +115,14 @@ const handleCard = async (categoryId) => {
                   ? '<i class="fa-solid fa-circle-check"></i>'
                   : ""
               }
-            
-            </span></p> 
+
+            </span></p>
               <p>${category?.others?.views}</p>
             </div>
           </div>
         </div>
     </div>
     `;
-
     cardContainer.appendChild(div);
   });
 };
